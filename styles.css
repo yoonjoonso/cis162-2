@@ -1,0 +1,88 @@
+body {
+  background-color: #F5F2EB; 
+  font-family: 'Segoe UI', sans-serif;
+  color: #2B2B2B;
+  display: flex;
+  flex-direction: column;
+}
+
+
+header {
+  text-align: center;
+  padding: 20px 10px 20px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #2B2B2B;
+  letter-spacing: 0.1rem;
+}
+
+nav{
+    width: 100%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    height: 100%;
+    margin: 0;
+    border-radius: 40px;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;    
+    justify-content: center;
+    align-items: stretch;
+    padding: 20px;
+}
+
+nav a
+{
+    text-decoration: none;
+    padding: 20px;
+}
+
+.homeContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.homeContainer img {
+  position: absolute;
+  width: 100%;
+}
+
+.worldMap {
+  z-index: 1;
+}
+
+.northAmericaHighlight {
+  opacity: 0;
+  z-index: 2;
+}
+
+.mapClickable  {
+  position: absolute;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.mapClickable.northAmerica {
+  top: 15%;
+  left: 10%;
+  width: 20%;
+  height: 30%;
+}
+
+.mapClickable.northAmerica:hover ~ .northAmericaHighlight {
+  opacity: 1;
+}
+
+
+
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 40px;
+}

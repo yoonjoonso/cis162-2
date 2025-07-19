@@ -62,10 +62,14 @@ nav a
   z-index: 2;
 }
 
+.southAmericaHighlight {
+  opacity: 0;
+  z-index: 2;
+}
+
 .mapClickable  {
   position: absolute;
   z-index: 3;
-  cursor: pointer;
 }
 
 .mapClickable.northAmerica {
@@ -75,7 +79,18 @@ nav a
   height: 30%;
 }
 
+.mapClickable.southAmerica {
+  top: 50%;
+  left: 25%;
+  width: 15%;
+  height: 25%;
+}
+
 .mapClickable.northAmerica:hover ~ .northAmericaHighlight {
+  opacity: 1;
+}
+
+.mapClickable.southAmerica:hover ~ .southAmericaHighlight {
   opacity: 1;
 }
 

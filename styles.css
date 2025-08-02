@@ -1,21 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Merriweather:wght@400;700&display=swap');
+
 body {
     background-color: #F5F2EB; 
     font-family: 'Segoe UI', sans-serif;
     color: #2B2B2B;
     display: flex;
     flex-direction: column;
+    margin: 0;
+    padding: 0;
 }
 
+body.NorthAmerica
+{
+    background-color: #1D3557; 
+    color: #F5F2EB;
+}
+
+body.SouthAmerica
+{
+    background-color: #117C6F ; 
+    color: #F5F2EB;
+}
+
+body.Europe
+{
+    background-color: #3D2E5E ; 
+    color: #F5F2EB;
+}
+
+body.Africa
+{
+    background-color: #8B3320; 
+    color: #F5F2EB;
+}
+
+body.EastAsia
+{
+    background-color: #005E63  ; 
+    color: #F5F2EB;
+}
+
+body.CentralAsia
+{
+    background-color: #6A5A3C ; 
+    color: #F5F2EB;
+}
+
+.backbutton {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    transform-origin: center; 
+    transition: transform .3s;
+    display: inline-block;
+    font-family: 'Merriweather', serif;
+}
+
+.backbutton:hover {
+    transform: scale(1.12);
+}
 
 header {
     text-align: center;
-    padding: 20px 10px 20px;
+    padding: 10px 0 5px;
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     color: #2B2B2B;
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.05rem;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 0.3rem;
+}
+
+h2{
+    font-size: 1rem;
+    color: #555;
+    opacity: 0.8;
+    margin-top: 0.2rem;
+    font-family: 'Merriweather', serif;
+    letter-spacing: 0.03rem;
 }
 
 nav{
@@ -47,6 +111,7 @@ nav a
     aspect-ratio: 2 / 1;
     border-radius: 1rem;
     overflow: hidden;
+    margin-top: 15px;
 }
 
 .homeContainer img {
@@ -58,12 +123,12 @@ nav a
     z-index: 1;
 }
 
-.northAmericaHighlight {
-    opacity: 0;
-    z-index: 2;
-}
-
-.southAmericaHighlight {
+.northAmericaHighlight,
+.southAmericaHighlight,
+.europeHighlight,
+.africaHighlight,
+.centralAsiaHighlight,
+.eastAsiaHighlight{
     opacity: 0;
     z-index: 2;
 }
@@ -74,51 +139,82 @@ nav a
 }
 
 .mapClickable.northAmerica {
-    top: 15%;
+    top: 5%;
     left: 10%;
-    width: 20%;
-    height: 30%;
+    width: 25%;
+    height: 32%;
 }
 
 .mapClickable.southAmerica {
     top: 50%;
-    left: 25%;
+    left: 23%;
     width: 15%;
+    height: 33%;
+}
+
+.mapClickable.europe {
+    top: 0%;
+    left: 39%;
+    width: 40%;
     height: 25%;
 }
 
-.mapClickable.northAmerica:hover ~ .northAmericaHighlight {
-    opacity: 1;
+.mapClickable.africa {
+    top: 25%;
+    left: 43%;
+    width: 20%;
+    height: 50%;
 }
 
-.mapClickable.southAmerica:hover ~ .southAmericaHighlight {
+.mapClickable.centralAsia {
+    top: 18%;
+    left: 60%;
+    width: 18%;
+    height: 30%;
+}
+
+.mapClickable.eastAsia {
+    top: 20%;
+    left: 70%;
+    width: 40%;
+    height: 50%;
+}
+
+.mapClickable.northAmerica:hover ~ .northAmericaHighlight,
+.mapClickable.southAmerica:hover ~ .southAmericaHighlight,
+.mapClickable.europe:hover ~ .europeHighlight,
+.mapClickable.africa:hover ~ .africaHighlight,
+.mapClickable.centralAsia:hover ~ .centralAsiaHighlight,
+.mapClickable.eastAsia:hover ~ .eastAsiaHighlight{
     opacity: 1;
 }
 
 .regionContainer{
     display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:40px;
+    margin: 0 auto;
 }
 
 .regionContainer .mapContainer
 {
-    flex: 1;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #6ab6ff;
+    display: inline-block;
 }
 
-.map-image {
-  max-width: 90%;
-  height: auto;
+.regionContainer .mapContainer img
+{
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 .map-dot {
   position: absolute;
   width: 20px;
   height: 20px;
-  background-color: red;
+  background-color: #EEE  ;
   border-radius: 50%;
   border: 2px solid white;
   cursor: pointer;
@@ -128,40 +224,162 @@ nav a
 
 .map-dot:hover {
   transform: translate(-50%, -50%) scale(1.2);
-  background-color: #a50000;
+  background-color: #222    ;
 }
 
 input[type="radio"] {
   display: none;
 }
 
+input[type="radio"]#usa:checked ~ .mapContainer label[for="usa"],
+input[type="radio"]#mexico:checked ~ .mapContainer label[for="mexico"],
+input[type="radio"]#cuba:checked ~ .mapContainer label[for="cuba"],
+input[type="radio"]#jamaica:checked ~ .mapContainer label[for="jamaica"],
+input[type="radio"]#canada:checked ~ .mapContainer label[for="canada"],
+input[type="radio"]#brasil:checked ~ .mapContainer label[for="brasil"],
+input[type="radio"]#argentina:checked ~ .mapContainer label[for="argentina"],
+input[type="radio"]#colombia:checked ~ .mapContainer label[for="colombia"],
+input[type="radio"]#peru:checked ~ .mapContainer label[for="peru"],
+input[type="radio"]#uk:checked ~ .mapContainer label[for="uk"],
+input[type="radio"]#france:checked ~ .mapContainer label[for="france"],
+input[type="radio"]#spain:checked ~ .mapContainer label[for="spain"],
+input[type="radio"]#germany:checked ~ .mapContainer label[for="germany"],
+input[type="radio"]#russia:checked ~ .mapContainer label[for="russia"],
+input[type="radio"]#finland:checked ~ .mapContainer label[for="finland"],
+input[type="radio"]#nigeria:checked ~ .mapContainer label[for="nigeria"],
+input[type="radio"]#morocco:checked ~ .mapContainer label[for="morocco"],
+input[type="radio"]#southafrica:checked ~ .mapContainer label[for="southafrica"],
+input[type="radio"]#ethiopia:checked ~ .mapContainer label[for="ethiopia"],
+input[type="radio"]#china:checked ~ .mapContainer label[for="china"],
+input[type="radio"]#korea:checked ~ .mapContainer label[for="korea"],
+input[type="radio"]#japan:checked ~ .mapContainer label[for="japan"],
+input[type="radio"]#thailand:checked ~ .mapContainer label[for="thailand"],
+input[type="radio"]#india:checked ~ .mapContainer label[for="india"],
+input[type="radio"]#iran:checked ~ .mapContainer label[for="iran"],
+input[type="radio"]#turkey:checked ~ .mapContainer label[for="turkey"]
+{
+  background-color: #222   ; 
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
 .infoContainer {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #111;
-  padding: 20px;
+    flex: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 500px;
+}
+
+.fixedCard {
+    max-width: 500px;
+    width: 100%;
+    min-height: 700px;
+}
+
+.card-header{
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 12px;
+}
+
+.card-header.past{
+    background: linear-gradient(90deg, #5D4037, #8D6E63);
+    color: #FBE9E7;
+}
+
+.card-header.present{
+    background: linear-gradient(90deg, #0D47A1, #42A5F5); /* blue modern tones */
+    color: white;
+}
+
+
+.info .card.mb-3 {
+    padding: 0 10px;
 }
 
 .info {
   display: none;
   flex-direction: column;
   gap: 20px;
-  width: 90%;
+  width: 100%;
 }
 
-.info iframe {
-  aspect-ratio: 16 / 9;
-  border: none;
+.info.default{
+    display:flex;
+    font-family: 'Playfair Display', serif; 
+    font-size: 2rem;         
+    color: #555;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
 }
 
-#usa:checked ~ .infoContainer .usa {
-  display: flex;
+.info h3{
+    margin-top: 100px;
 }
 
-#mexico:checked ~ .infoContainer .mexico {
-  display: flex;
+#usa:checked ~ .infoContainer .usa,
+#mexico:checked ~ .infoContainer .mexico,
+#jamaica:checked ~ .infoContainer .jamaica,
+#canada:checked ~ .infoContainer .canada,
+#cuba:checked ~ .infoContainer .cuba,
+#brasil:checked ~ .infoContainer .brasil,
+#argentina:checked ~ .infoContainer .argentina,
+#peru:checked ~ .infoContainer .peru,
+#colombia:checked ~ .infoContainer .colombia,
+#uk:checked ~ .infoContainer .uk,
+#france:checked ~ .infoContainer .france,
+#spain:checked ~ .infoContainer .spain,
+#germany:checked ~ .infoContainer .germany,
+#russia:checked ~ .infoContainer .russia,
+#finland:checked ~ .infoContainer .finland,
+#nigeria:checked ~ .infoContainer .nigeria,
+#morocco:checked ~ .infoContainer .morocco,
+#southafrica:checked ~ .infoContainer .southafrica,
+#ethiopia:checked ~ .infoContainer .ethiopia,
+#china:checked ~ .infoContainer .china,
+#korea:checked ~ .infoContainer .korea,
+#japan:checked ~ .infoContainer .japan,
+#thailand:checked ~ .infoContainer .thailand,
+#india:checked ~ .infoContainer .india,
+#iran:checked ~ .infoContainer .iran,
+#turkey:checked ~ .infoContainer .turkey
+{
+  display: block;
+}
+
+#usa:checked ~ .infoContainer .default,
+#mexico:checked ~ .infoContainer .default,
+#cuba:checked ~ .infoContainer .default,
+#canada:checked ~ .infoContainer .default,
+#jamaica:checked ~ .infoContainer .default,
+#brasil:checked ~ .infoContainer .default,
+#argentina:checked ~ .infoContainer .default,
+#peru:checked ~ .infoContainer .default,
+#colombia:checked ~ .infoContainer .default,
+#uk:checked ~ .infoContainer .default,
+#france:checked ~ .infoContainer .default,
+#spain:checked ~ .infoContainer .default,
+#germany:checked ~ .infoContainer .default,
+#russia:checked ~ .infoContainer .default,
+#finland:checked ~ .infoContainer .default,
+#nigeria:checked ~ .infoContainer .default,
+#morocco:checked ~ .infoContainer .default,
+#southafrica:checked ~ .infoContainer .default,
+#ethiopia:checked ~ .infoContainer .default,
+#china:checked ~ .infoContainer .default,
+#korea:checked ~ .infoContainer .default,
+#japan:checked ~ .infoContainer .default,
+#thailand:checked ~ .infoContainer .default,
+#india:checked ~ .infoContainer .default,
+#iran:checked ~ .infoContainer .default,
+#turkey:checked ~ .infoContainer .default
+{
+  display: none;
 }
 
 .card-img

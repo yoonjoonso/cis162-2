@@ -3,26 +3,105 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Musical Past & Present - South America</title>
+        <title>Musical Past & Present</title>
         <link rel="icon" href="images/globeIcon.png" type="image/x-icon">
         <link rel="stylesheet" href="styles.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/6.5.1/css/flag-icons.min.css">
     </head>
-    <body>
+    <body class="SouthAmerica">
         <header>
             <h1>Musical Past & Present</h1>
+            <a href="index.html" class="backbutton" title="back">← Go back</a>
         </header>
         
-        <footer>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="northamerica.html">North America</a></li>
-                    <li><a href="southamerica.html">South America</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="survey.html">Survey</a></li>
-                </ul>
-            </nav>
-            <a href="mailto:yoonjoonso@gmail.com">Email me</a>
-        </footer>
+        <main class="regionContainer">
+            <input type = "radio" name="country" id="brasil">
+            <input type = "radio" name="country" id="argentina">
+            <input type = "radio" name="country" id="peru">
+            <input type = "radio" name="country" id="colombia">
+            
+            <div class="mapContainer">
+                <img src="images/map/SouthAmerica.svg" alt="South America">
+        
+                <label for="brasil" class="map-dot" style="top: 40%; left: 75%;" title="Brasil"></label>
+                <label for="argentina" class="map-dot" style="top: 70%; left: 50%;" title="Argentina"></label>
+                <label for="peru" class="map-dot" style="top: 31%; left: 10%;" title="Peru"></label>
+                <label for="colombia" class="map-dot" style="top: 15%; left: 19%;" title="Colombia"></label>
+            </div>
+            
+            <div class="infoContainer">
+               
+                <div class="info default container">
+                    <div class="card shadow-lg rounded-4 fixedCard border-0" ><h3>Click a dot on the map</h3></div>
+                </div>
+                
+                <div class="info brasil container">
+                    <div class="card shadow-lg rounded-4 fixedCard border-0" >
+                    <h2 class="text-center my-4"><span class="fi fi-br"></span> Brazil</h2>
+                    <div class="card mb-3 border-0">
+                        <div class="card-header text-center fw-bold past">Past</div>
+                        <div class="ratio ratio-16x9 rounded-bottom overflow-hidden"><iframe src="https://www.youtube.com/embed/KHyzrYBACcg?start=1" 
+                                title="YouTube video player" allow="autoplay; encrypted-media;" allowfullscreen></iframe></div>
+                    </div>
+                    <div class="card mb-3 border-0">
+                        <div class="card-header text-center fw-bold present">Present</div>
+                        <div class="ratio ratio-16x9 rounded-bottom overflow-hidden"><iframe src="https://www.youtube.com/embed/ldG2t3dBWlg?start=59" 
+                        title="YouTube video player" allow="autoplay; encrypted-media;" allowfullscreen></iframe></div>
+                    </div>
+                    </div>
+                </div>
+                
+                <div class="info argentina container">
+                    <div class="card shadow-lg rounded-4 fixedCard border-0" >
+                        <h2 class="text-center my-4"><span class="fi fi-ar"></span> Argentina</h2>
+                        <div class="card mb-3 border-0">
+                            <div class="card-header text-center fw-bold past">Past</div>
+                            <div class="ratio ratio-16x9 rounded-bottom overflow-hidden"><iframe src="https://www.youtube.com/embed/o20YCzej5_s?start=90" 
+                            title="YouTube video player" allow="autoplay; encrypted-media;" allowfullscreen></iframe></div>
+                        </div>
+                        <div class="card mb-3 border-0">
+                            <div class="card-header text-center fw-bold present">Present</div>
+                            <div class="ratio ratio-16x9 rounded-bottom overflow-hidden"><iframe src="https://www.youtube.com/embed/A_g3lMcWVy0?start=90" 
+                              title="YouTube video player" allow="autoplay; encrypted-media;" allowfullscreen></iframe></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="info peru container">
+                    <div class="card shadow-lg rounded-4 fixedCard border-0" >
+                        <h2 class="text-center my-4"><span class="fi fi-pe"></span> Peru</h2>
+                        <div class="card mb-3 border-0">
+                            <div class="card-header text-center fw-bold past">Past</div>
+                            <div class="ratio ratio-16x9 rounded-bottom overflow-hidden"><iframe src="https://www.youtube.com/embed/8kQZHYbZkLs?start=33" 
+                            title="YouTube video player" allow="autoplay; encrypted-media;" allowfullscreen></iframe></div>
+                        </div>
+                        <div class="card mb-3 border-0">
+                            <div class="card-header text-center fw-bold present">Present</div>
+                            <div class="ratio ratio-16x9 rounded-bottom overflow-hidden"><iframe src="https://www.youtube.com/embed/DsL5LivouVs?start=47" 
+                              title="YouTube video player" allow="autoplay; encrypted-media;" allowfullscreen></iframe></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="info colombia container">
+                    <div class="card shadow-lg rounded-4 fixedCard border-0" >
+                        <h2 class="text-center my-4"><span class="fi fi-co"></span> Colombia</h2>
+                        <div class="card mb-3 border-0">
+                            <div class="card-header text-center fw-bold past">Past</div>
+                            <div class="ratio ratio-16x9 rounded-bottom overflow-hidden"><iframe src="https://www.youtube.com/embed/G5SDJtd4oD8?start=22" 
+                            title="YouTube video player" allow="autoplay; encrypted-media;" allowfullscreen></iframe></div>
+                        </div>
+                        <div class="card mb-3 border-0">
+                            <div class="card-header text-center fw-bold present">Present</div>
+                            <div class="ratio ratio-16x9 rounded-bottom overflow-hidden"><iframe src="https://www.youtube.com/embed/o1YBngPfU-o?start=148" 
+                              title="YouTube video player" allow="autoplay; encrypted-media;" allowfullscreen></iframe></div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </main>
     </body>
 </html>

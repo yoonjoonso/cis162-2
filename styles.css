@@ -256,7 +256,8 @@ input[type="radio"]#japan:checked ~ .mapContainer label[for="japan"],
 input[type="radio"]#thailand:checked ~ .mapContainer label[for="thailand"],
 input[type="radio"]#india:checked ~ .mapContainer label[for="india"],
 input[type="radio"]#iran:checked ~ .mapContainer label[for="iran"],
-input[type="radio"]#turkey:checked ~ .mapContainer label[for="turkey"]
+input[type="radio"]#turkey:checked ~ .mapContainer label[for="turkey"],
+input[type="radio"]#turkey:checked ~ .mapContainer label[for="vietnam"]
 {
   background-color: #222   ; 
   transform: translate(-50%, -50%) scale(1.2);
@@ -292,10 +293,9 @@ input[type="radio"]#turkey:checked ~ .mapContainer label[for="turkey"]
 }
 
 .card-header.present{
-    background: linear-gradient(90deg, #0D47A1, #42A5F5); /* blue modern tones */
+    background: linear-gradient(90deg, #0D47A1, #42A5F5);
     color: white;
 }
-
 
 .info .card.mb-3 {
     padding: 0 10px;
@@ -347,7 +347,8 @@ input[type="radio"]#turkey:checked ~ .mapContainer label[for="turkey"]
 #thailand:checked ~ .infoContainer .thailand,
 #india:checked ~ .infoContainer .india,
 #iran:checked ~ .infoContainer .iran,
-#turkey:checked ~ .infoContainer .turkey
+#turkey:checked ~ .infoContainer .turkey,
+#vietnam:checked ~ .infoContainer .vietnam
 {
   display: block;
 }
@@ -377,7 +378,8 @@ input[type="radio"]#turkey:checked ~ .mapContainer label[for="turkey"]
 #thailand:checked ~ .infoContainer .default,
 #india:checked ~ .infoContainer .default,
 #iran:checked ~ .infoContainer .default,
-#turkey:checked ~ .infoContainer .default
+#turkey:checked ~ .infoContainer .default,
+#vietnam:checked ~ .infoContainer .default
 {
   display: none;
 }
